@@ -6,10 +6,10 @@ Curated **per-interaction usage results** for representative GCP agent architect
 
 | Architecture | Interactions | Total turns | Input tokens | Output tokens | Model calls | Runtime vCPU-s | Session events | Mem-gen tokens | Mem retrieved | Firestore W/R | RAG queries | Grounded turns | $ / interaction |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|:--:|--:|--:|--:|
-| [Conversational Chatbot](archetypes/conversational-chatbot.md) | 120 | 432 | 6,369 | 693 | 7.5 | 20.9 | 15.0 | 2,486 | 0.00 | 0.03/0.00 | 2.15 | 0.00 | 0.0139 |
-| [Workflow Operator](archetypes/workflow-operator.md) | 118 | 425 | 20,107 | 1,485 | 14.0 | 25.3 | 27.9 | 2,549 | 0.67 | 1.42/1.23 | 0.00 | 0.00 | 0.0232 |
-| [Autonomous Researcher](archetypes/autonomous-researcher.md) | 79 | 253 | 32,585 | 10,739 | 7.8 | 171.2 | 15.6 | 7,999 | 0.38 | 1.34/2.06 | 1.18 | 1.62 | 0.0822 |
-| [Multi-Agent Orchestrator](archetypes/multi-agent-orchestrator.md) | 120 | 432 | 149,080 | 6,080 | 18.9 | 90.6 | 37.9 | 2,793 | 0.20 | 0.29/0.63 | 0.42 | 0.00 | 0.0932 |
+| [Conversational Chatbot](agent-estimates/conversational-chatbot.md) | 120 | 432 | 6,369 | 693 | 7.5 | 20.9 | 15.0 | 2,486 | 0.00 | 0.03/0.00 | 2.15 | 0.00 | 0.0139 |
+| [Workflow Operator](agent-estimates/workflow-operator.md) | 118 | 425 | 20,107 | 1,485 | 14.0 | 25.3 | 27.9 | 2,549 | 0.67 | 1.42/1.23 | 0.00 | 0.00 | 0.0232 |
+| [Autonomous Researcher](agent-estimates/autonomous-researcher.md) | 79 | 253 | 32,585 | 10,739 | 7.8 | 171.2 | 15.6 | 7,999 | 0.38 | 1.34/2.06 | 1.18 | 1.62 | 0.0822 |
+| [Multi-Agent Orchestrator](agent-estimates/multi-agent-orchestrator.md) | 120 | 432 | 149,080 | 6,080 | 18.9 | 90.6 | 37.9 | 2,793 | 0.20 | 0.29/0.63 | 0.42 | 0.00 | 0.0932 |
 
 _All values are **per interaction** (averaged) unless noted. **Total turns** = total user turns across the whole experiment. **Mem-gen tokens** = Memory Bank generation tokens; **Mem retrieved** = memories recalled via `load_memory`. **Firestore W/R** = document writes / reads. **Grounded turns** = Google Search grounded query-turns. **$ / interaction** is a catalog list-price estimate (see below)._
 
