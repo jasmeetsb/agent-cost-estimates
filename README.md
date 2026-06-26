@@ -1,6 +1,6 @@
 # Agent cost estimates
 
-Curated **per-interaction usage results** for representative GCP agent architectures. Each agent below links to its full architecture, measured SKU usage (with ranges + variability), derived cost, and the exact test workload behind the numbers. 
+Curated **per-interaction usage results** for representative GCP agent architectures. Each agent below links to its full architecture, measured SKU usage (with ranges + variability), derived cost, and the exact test workload behind the numbers.
 
 ## Archetypes
 
