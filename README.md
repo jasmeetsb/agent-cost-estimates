@@ -4,18 +4,20 @@ Curated **per-interaction usage results** for representative GCP agent architect
 
 ## Archetypes
 
-| Archetype | Interactions | Turns | Input tok | Output tok | Model calls | Runtime vCPU-s | Sessions | Mem-gen tok | Mem retr | Firestore W/R | RAG | Grounding | $/intxn |
+| Architecture | Interactions | Total turns | Input tokens | Output tokens | Model calls | Runtime vCPU-s | Session events | Mem-gen tokens | Mem retrieved | Firestore W/R | RAG queries | Grounded turns | $ / interaction |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|:--:|--:|--:|--:|
 | [Conversational Chatbot](archetypes/conversational-chatbot.md) | 120 | 432 | 6,369 | 693 | 7.5 | 20.9 | 15.0 | 2,486 | 0.00 | 0.03/0.00 | 2.15 | 0.00 | 0.0139 |
 | [Workflow Operator](archetypes/workflow-operator.md) | 118 | 425 | 20,107 | 1,485 | 14.0 | 25.3 | 27.9 | 2,549 | 0.67 | 1.42/1.23 | 0.00 | 0.00 | 0.0232 |
 | [Autonomous Researcher](archetypes/autonomous-researcher.md) | 79 | 253 | 32,585 | 10,739 | 7.8 | 171.2 | 15.6 | 7,999 | 0.38 | 1.34/2.06 | 1.18 | 1.62 | 0.0822 |
 | [Multi-Agent Orchestrator](archetypes/multi-agent-orchestrator.md) | 120 | 432 | 149,080 | 6,080 | 18.9 | 90.6 | 37.9 | 2,793 | 0.20 | 0.29/0.63 | 0.42 | 0.00 | 0.0932 |
 
+_All values are **per interaction** (averaged) unless noted. **Total turns** = total user turns across the whole experiment. **Mem-gen tokens** = Memory Bank generation tokens; **Mem retrieved** = memories recalled via `load_memory`. **Firestore W/R** = document writes / reads. **Grounded turns** = Google Search grounded query-turns. **$ / interaction** is a catalog list-price estimate (see below)._
+
 ## How these were measured
 
 - Each agent was built on Google's **Agent Development Kit (ADK)**, deployed to **Vertex AI Agent Engine**, and run for its stated number of interactions (multi-turn; see each page).
 - **Model: gemini-2.5-flash** for all usage and cost numbers.
-- Token usage from the model response (`usage_metadata`); runtime + Memory Bank from Cloud Monitoring; RAG / grounding / Firestore counted from the agent's tool calls; Imagen from Cloud Monitoring.
+- Token usage from the model's `usage_metadata`, or from Cloud Monitoring `token_count` for agents whose sub-agents are invoked as callable tools (each page states which, and why); runtime + Memory Bank from Cloud Monitoring; RAG / grounding / Firestore counted from the agent's tool calls; Imagen from Cloud Monitoring.
 - **Dollars are Cloud Billing Catalog list-price estimates**, not billed spend. Usage quantities are the primary output; cost is a secondary derived view.
 - The **coordinator vs sub-agent token split %** (where shown) comes from a separate two-model measurement (coordinator on gemini-3.5-flash, sub-agents on gemini-3.1-flash-lite).
 
